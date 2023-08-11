@@ -1,4 +1,4 @@
-// function calcPrice(price, discount){
+//  function calcPrice(price, discount){
 //     const disc = (price*discount)/100;
 //     const total = price - disc;
 //     return total
@@ -16,54 +16,46 @@
 //     Descripcion: ${description}
 //     `
 // }
-// //---------------------------------------------------------------------
-// myArray=[]
-// function agregarProducto(nombre,precio){
-//     let producto={
-//         nombre1: nombre,
-//         Precio: precio
-//     }
-//     return producto
-// }
-// function subirProducto(producto,array){
-//     array.push(producto)
-//     return array
-// }
+//---------------------------------------------------------------------
+let listaProductos=[]
+let listaUsuarios=[]
+function agregarProducto(){
+    nombre = prompt("Ingrese su producto")
+    precio = prompt("Ingrese el precio")
+    let producto={
+        nombre1: nombre,
+        Precio: precio
+    }
+    return producto
+}
+function subirProducto(producto,array){
+    array.push(producto)
+    return array
+}
 
-// function crearUsuario(contraseña){
-//     let email = prompt("Ingrese su email")
-//     while(email.length==0){
-//         email = prompt("Por favor, ingrese un email")
-//         console.log(email)
-//     }
-//     let usuario = {
-//         email,
-//         contraseña,
-//         admin : false
-//     }
-//     if(email.includes("@gm2dev.com")){
-//         usuario.admin = true
-//     }
+function crearUsuario(){
+    let email = prompt("Ingrese su email")
+    let contraseña = prompt("Ingrese su contraseña")
+    while(email.length==0){
+        email = prompt("Por favor, ingrese un email")
+        console.log(email)
+    }
+    let usuario = {
+        email,
+        contraseña,
+        admin : false
+    }
+    if(email.includes("@gm2dev.com")){
+        usuario.admin = true
+    }
         
-//     return usuario
-// }
+    return usuario
+}
+function subirUsuario()
+usuario=crearUsuario()
 
-// function login(usuario){
-    
-//     if(usuario.admin){
-//         subirProducto(agregarProducto("Paleta",123),myArray)
-//         return true
-//     }
-//     else{
-//         alert("Que haces payaso?")
-//         return false
-//     }
-// }
-// let pepe=crearUsuario("123")
-// login(pepe)
-// console.log(myArray);
 const userAdmin = {
-    username: 'admin',
+    user: 'admin',
     password: '1234'
 };
 
@@ -71,12 +63,7 @@ function login() {
     for (let x=1 ; x<=3; x++){
         const username = prompt("Ingrese el usuario:");
         const password = prompt("Ingrese la contraseña:");
-
-        console.log(username);
-        console.log(password);
-
-    // Validar credenciales
-        if(username == userAdmin.username && password == userAdmin.password) {
+        if(username == userAdmin.user && password == userAdmin.password) {
             console.log("Logueado!");
             return true;
         } 
